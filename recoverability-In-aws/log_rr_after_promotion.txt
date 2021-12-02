@@ -1,0 +1,34 @@
+[ec2-user@ip-10-2-10-135 ~]$ mysql -u admin -h replica-db-1.c7hfzhtultdw.us-east-2.rds.amazonaws.com -p udacity
+Enter password:
+Reading table information for completion of table and column names
+You can turn off this feature to get a quicker startup with -A
+
+Welcome to the MariaDB monitor.  Commands end with ; or \g.
+Your MySQL connection id is 8
+Server version: 8.0.23 Source distribution
+
+Copyright (c) 2000, 2018, Oracle, MariaDB Corporation Ab and others.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+MySQL [udacity]> select * from student;
++------------+---------------+-----------+
+| student_id | student_class | avg_score |
++------------+---------------+-----------+
+|          1 | 5th grade     | 67.9      |
++------------+---------------+-----------+
+1 row in set (0.00 sec)
+
+MySQL [udacity]> insert into  student (student_class, avg_score ) values ('6th grade', '77.9');
+Query OK, 1 row affected (0.00 sec)
+
+MySQL [udacity]> select * from student;
++------------+---------------+-----------+
+| student_id | student_class | avg_score |
++------------+---------------+-----------+
+|          1 | 5th grade     | 67.9      |
+|          2 | 6th grade     | 77.9      |
++------------+---------------+-----------+
+2 rows in set (0.00 sec)
+
+MySQL [udacity]>

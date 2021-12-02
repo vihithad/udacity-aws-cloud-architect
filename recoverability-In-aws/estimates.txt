@@ -1,0 +1,34 @@
+1.	Minimum RTO for a single AZ outage
+
+RTO represents how many hours it takes you to return to a working state after a disaster
+In case of single AZ outage, since we have enabled the multi-AZ feature that provides failover support and Multi-AZ redundancy 
+RDS switches to another AZ and route the traffic to secondary AZ. RTO could vary and we cannot exactly say how much it will take to switch. 
+It depends on the SLA agreements and critical applications can’t afford even a moderate amount of downtime. So overall its difficult to say and could vary between few seconds to 120 seconds.
+
+ 
+
+2.	Minimum RTO for a single region outage
+
+For a single region outage, since we have a read replica in another region, we have to 
+1. make the replica to allow writes.
+2. deploy the applictaion to run in another region
+Since this requires manual intervanetion, RTO can be higher and varies between 30mins to 1 hr.
+
+3.	Minimum RPO for a single AZ outage
+We have data stored in secondary AZ as well. Data loss can be minimum here. 
+I deal scenario, RPO can be 0
+but during the single AZ outage at 2 am, an application is running in the AZ and failed at 2:10 am, then there is a chance of 10min data loss.
+
+
+4.	Minimum RPO for a single region outage
+
+In this case, since we have a read replica in another region, there will be frequent backups. 
+we will need to findout when the last backup took place. if it happened right before the outage, there is no data loss.
+but it happened 10 minx before, then we have 10min RPO. 
+
+In case of single region outages, we have to configure the read replica to serve as primary and perform backup from last backedup time, also it depends on the size of the data
+etc. 
+when there are no applications running, there is no data loss, so no RPO. But RTO depends on time to get the secondary region primary and deployement. 
+when there are applications running, then RPO depends on how much time the application ran after the outage. 
+
+
