@@ -1,0 +1,17 @@
+﻿Region,Service,Upfront,Monthly,Currency,Configuration summary
+US East (Ohio),Amazon EC2,0,2522,USD,"Operating system (Linux), Quantity (10), Storage for each EC2 instance (General Purpose SSD (gp2)), Storage amount (300 GB), Instance type (t3.2xlarge)"
+US East (Ohio),Amazon EC2,0,2562.2,USD,"Operating system (Linux), Quantity (6), Storage for each EC2 instance (General Purpose SSD (gp2)), Storage amount (2000 GB), Instance type (c5.large)"
+US East (Ohio),Amazon RDS for PostgreSQL,0,"4,434.08",USD,"Quantity (2), Storage volume (General Purpose SSD (gp2)), Storage amount (600 GB per month), Instance type (db.m5.4xlarge)"
+US East (Ohio),Amazon Route 53,0,2388,USD,"Hosted Zones (1), Basic Checks Within AWS (3000), Number of Elastic Network Interfaces (10)"
+US East (Ohio),S3 Standard IA,,250,,20k GB
+US East (Ohio),S3 Standard,0,1150,USD,S3 Standard storage (50000 GB per month)
+US East (Ohio),Amazon Virtual Private Cloud (VPC),0,2765.7,USD,"Number of NAT Gateways (2), data processed - 30000GB"
+US East (Ohio),Elastic Load Balancing,0,600.43,USD,Number of Application Load Balancers (1)
+US East (Ohio),"Network  Load Balancing	",0,1330.43,USD,"Number of Network Load Balancers (1), Processed bytes per NLB for TCP (200 GB per hour), Processed bytes per NLB for TLS (100 GB per hour), Average number of new TLS connections (10 per second), Average TLS connection duration (30 seconds)"
+US East (Ohio),Amazon CloudWatch,0,1910,USD,
+,,,,,
+,,,19912.84,,1. ec2 - Increased the quantity and EBS memory. Also instance size for quick processing
+2. RDS - Made 2 and increased storage,,,,,
+3. Increased checks and network instances,,,,,
+4. Added S3 IA,,,,,
+"5. Added more metrics and logs""",,,,,
